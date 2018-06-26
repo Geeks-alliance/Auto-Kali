@@ -1,4 +1,11 @@
-                    GNU GENERAL PUBLIC LICENSE
+import os
+import time
+
+from termcolor import *
+
+def xy():
+    time.sleep(1)
+    print ("""                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
@@ -671,4 +678,38 @@ into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-<https://www.gnu.org/licenses/why-not-lgpl.html>.
+<https://www.gnu.org/licenses/why-not-lgpl.html>.""")
+    print ("\n\n\n")
+    back = input(colored("press any key Back!","red"))
+    main()
+    pass
+def lis():
+    time.sleep(1)
+    print("""
+---------------Start------------------
+
+mdk4         https://github.com/aircrack-ng/mdk4
+powershell         https://github.com/PowerShell/PowerShell
+bettercap      https://rubygems.org/gems/bettercap
+ircQQ         https://github.com/sjdy521/Mojo-Webqq
+
+----------------End-------------------
+    """)
+    back = input(colored("press any key Back!","red"))
+    main()
+    pass
+def main():
+    print (colored("本工具遵循 GPLv2 协议","red"))
+    print (colored("这个程序将会罗列出所有程序的来源 作者等内容!","blue"))
+    XX = input("协议内容(1) 来源列表(2) 退出(3):")
+    if XX == "1":
+        xy()
+    elif XX == "2":
+        lis()
+    elif XX == "3":
+      exit()
+    else:
+        main()
+
+
+main()
