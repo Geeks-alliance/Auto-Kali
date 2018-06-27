@@ -692,6 +692,7 @@ mdk4         https://github.com/aircrack-ng/mdk4
 powershell         https://github.com/PowerShell/PowerShell
 bettercap      https://rubygems.org/gems/bettercap
 ircQQ         https://github.com/sjdy521/Mojo-Webqq
+w3af       http://w3af.org/
 
 ----------------End-------------------
     """)

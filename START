@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+reset
+
+if [ "`id -u`" != 0 ]; then
+	whiptail --title "START ERROR" --msgbox "The software Must be run as root.  Exiting." 7 60
+	exit 1
+fi
+
+if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m                  #             ""#      "   \n   ##   m   m  mm#mm   mmm          #   m   mmm     #    mmm   \n  #  #  #   #    #    #" "#         # m"   "   #    #      #   \n  #mm#  #   #    #    #   #   """   #"#    m"""#    #      #   \n #    # "mm"#    "mm  "#m#"         #  "m  "mm"#    "mm  mm#mm\n\n                       是否打开Auto-kali?' 15 68) then
+
+	{
+ 	   for ((i = 0 ; i <= 100 ; i+=5)); do
+	        sleep 0.1
+ 	        echo $i
+	    done
+	} | whiptail --gauge "开启进度" 6 60 0
+
+	apt install -y python3-termcolor >> /dev/null
+
+	if [ $? -ne 0 ]; then
+    	echo "Start failed"
+		exit
+	else
+		python3 master.py
+	fi
+
+	exit
+else
+    exit
+fi
+
