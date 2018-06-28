@@ -700,7 +700,7 @@ w3af       http://w3af.org/
     main()
     pass
 def main():
-    print (colored("本工具遵循 GPLv2 协议","red"))
+    print (colored("本工具遵循 GPLv3 协议","red"))
     print (colored("这个程序将会罗列出所有程序的来源 作者等内容!","blue"))
     XX = input("协议内容(1) 来源列表(2) 退出(3):")
     if XX == "1":
