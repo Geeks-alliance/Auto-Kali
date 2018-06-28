@@ -5,7 +5,7 @@ reset
 #检测登录用户 (4)
 if [ "`id -u`" != 0 ]; then
 	whiptail --title "START ERROR" --msgbox "The software Must be run as root.  Exiting." 7 60
-	exit 1
+	exit
 fi
 #结束 
 
@@ -24,7 +24,7 @@ if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m             
 		apt install -y python3-termcolor >> /tmp/Auto-kali-APT.log
 		#记录APT错误日志
     	if (whiptail --title "APT错误" --yes-button "查看log" --no-button "尝试启动"  --yesno "        请把log文件发到QQ:1945649519内\n               Log path:/tmp/Auto-kali-APT.log" 10 70) then
-    			whiptail --title "Log List" --textbox "/tmp/Auto-kali-APT.log"20 60
+    			whiptail --title "Log List" --textbox "/tmp/Auto-kali-APT.log" 20 60
 		else
 				#记录启动错误日志
     			python3 master.py
@@ -32,7 +32,7 @@ if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m             
 					apt update > /tmp/Auto-Kali.log
 					python3 master.py >> /tmp/Auto-kali.log
 					if (whiptail --title "错误" --yes-button "查看log" --no-button "退出"  --yesno "        请把log文件发到QQ:1945649519内\n               Log path:/tmp/Auto-kali.log" 10 70) then
-    					whiptail --title "Log List" --textbox "/tmp/Auto-log"20 60
+    					whiptail --title "Log List" --textbox "/tmp/Auto-log" 20 60
 					else
     					exit
 					fi
@@ -48,7 +48,7 @@ if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m             
 			apt update > /tmp/Auto-Kali.log
 			python3 master.py >> /tmp/Auto-kali.log
 			if (whiptail --title "错误" --yes-button "查看log" --no-button "退出"  --yesno "        请把log文件发到QQ:1945649519内\n               Log path:/tmp/Auto-kali.log" 10 70) then
-    			whiptail --title "Log List" --textbox "/tmp/Auto-kali.log"20 60
+    			whiptail --title "Log List" --textbox "/tmp/Auto-kali.log" 20 60
 			else
     			exit
 			fi
