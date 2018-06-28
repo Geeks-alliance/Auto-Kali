@@ -18,7 +18,7 @@
 > 安装方法:<br>
 > > cd /root<br>
 > > git clone https://github.com/nios34/kali-Tools<br>
-> 开启方法:<br>  
+> 开启方法: 
 > >cd /root/kali-Tools/<br>
 > >bash START.sh<br>
 
