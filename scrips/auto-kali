@@ -42,7 +42,7 @@ if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m             
 		#结束
 	else
 		#运行
-		python3 master.py
+		python3 /usr/share/auto-kali/master.py
 		#记录错误日志
 		if [ $? -ne 0 ];then
 			apt update > /tmp/Auto-Kali.log
