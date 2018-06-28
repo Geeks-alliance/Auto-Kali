@@ -3,6 +3,7 @@
 import os
 import time
 
+from master import main as restart
 from termcolor import *
 
 def install():
@@ -27,32 +28,32 @@ def install():
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "输入法":
         os.system('apt-get -y install fcitx-googlepinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "PINYIN":
         os.system('apt-get -y install fcitx-googlepinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "补全系统":
         os.system('apt-get -y install kali-linux-all')
         print (colored("操作完成，3秒后重启脚本","blue"))
         os.system('reset')
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "vm-tools":
         os.system('apt-get update')
         os.system('apt-get -y install open-vm-tools-desktop fuse')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "QQirc":
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
@@ -92,12 +93,12 @@ $client->run();""")
         os.system("rm /tmp/LS.sh")
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "bettercap":
         os.system("bash ./scrips/install_old_bettercap.sh")
         print (colored("操作完成，3秒后重启脚本 开启命令:bettercapj","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if AZXX == "powershell":
         DXCXX = input(colored("多线程下载(Y,N):"))
         if DXCXX == "Y":
@@ -110,7 +111,7 @@ exec xterm -e pwsh &""")
             inst.close()
             print (colored("操作完成，3秒后重启脚本 开启命令:powershell","blue"))
             time.sleep(3)
-            os.system('python3 master.py')
+            restart()
         if DXCXX == "N":
             os.system('wget -P /tmp "https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell_6.0.2-1.debian.9_amd64.deb"')
             os.system("dpkg -i /tmp/powershell_6.0.2-1.debian.9_amd64.deb")
@@ -123,7 +124,7 @@ exec xterm -e pwsh &""")
             inst.close()
             print (colored("操作完成，3秒后重启脚本 开启命令:powershell","blue"))
             time.sleep(3)
-            os.system('python3 master.py')
+            restart()
 def deb():
     print (colored('输入help以查询支持的软件源',"yellow"))
     debX = input(colored('请写出您要变为的软件源：',"yellow"))
@@ -141,7 +142,7 @@ def deb():
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if debX == "官方源":
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://http.kali.org/kali kali-rolling main non-free contrib\ndeb-src http://http.kali.org/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
@@ -149,7 +150,7 @@ def deb():
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
     if debX == "手动":
         os.system("reset")
         print (colored(r'本模块作者:{"text":"josn"}',"red"))
@@ -166,7 +167,7 @@ def deb():
             DA.close
             print (colored("操作完成，3秒后重启脚本","blue"))
             time.sleep(3)
-            os.system('python3 master.py')
+            restart()
         if DAA == "a":
             DA = open("/etc/apt/sources.list","a")
             XR = input(colored(r"写入\n即可换行,写入源地址:","yellow"))
@@ -174,14 +175,14 @@ def deb():
             DA.close()
             print (colored("操作完成，3秒后重启脚本","blue"))
             time.sleep(3)
-            os.system('python3 master.py')
+            restart()
 def gpg():
     os.system('wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add')
     os.system('apt-get update')
     os.system('reset')
     print (colored("操作完成，3秒后重启脚本","blue"))
     time.sleep(3)
-    os.system('python3 master.py')
+    restart()
 def  download():
     XC = input(colored("输入要使用的线程数:","yellow"))
     LJ = input(colored("输入要下载的文件链接:","yellow"))
@@ -193,7 +194,7 @@ def  download():
     print (colored("文件存放路径：/root/","blue"))
     print (colored("操作完成，3秒后重启脚本","blue"))
     time.sleep(3)
-    os.system('python3 master.py')
+    restart()
 def PATH():
     print (colored('输入help以查询支持的一键配置环境的语言',"yellow"))
     YY = input(colored("输入要安装的语言环境:","yellow"))
@@ -209,4 +210,4 @@ def PATH():
         print (colored("操作完成，3秒后重启脚本","blue"))
         print (colored("用户root的GO语言环境部署完成","blue"))
         time.sleep(3)
-        os.system('python3 master.py')
+        restart()
