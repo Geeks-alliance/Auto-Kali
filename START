@@ -23,7 +23,7 @@ if [ ! -f "/bin/auto-kali" ]; then
 	fi
 	apt-get install curl -y
 	path=$('pwd')
-	echo "python3 $path/master" > /usr/local/Auto-kali-path.conf
+	echo "python3 $path/master.py" > /usr/local/Auto-kali-path.conf
 	echo "lj=$path" > /bin/auto-kali
 	chmod 777 /bin/auto-kali
 	curl https://raw.githubusercontent.com/nios34/Auto-Kali/CK/mb.sh >> /bin/auto-kali
