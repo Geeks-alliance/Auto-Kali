@@ -25,7 +25,8 @@
 
 > 手动安装方法:<br>
 > > su<br>
-> > git clone https://github.com/nios34/Auto-Kali /usr/share/Auto-kali && ln -s /usr/share/Auto-kali/START /bin/auto-kali && chmod 777 /bin/auto-kali<br>
+> > git clone https://github.com/nios34/Auto-Kali && cd Auto-kali && sudo ./START<br>
+> > Tips:如果sudo auto-kali无法启动输入./START也能启动(仅限手动安装)
 
 --------------------------
 
