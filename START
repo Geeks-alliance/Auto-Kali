@@ -2,12 +2,29 @@
 
 reset
 
-#检测登录用户 (4)
+
+#检测登录用户
 if [ "`id -u`" != 0 ]; then
 	whiptail --title "START ERROR" --msgbox "The software Must be run as root.  Exiting." 7 60
 	exit
 fi
 #结束 
+
+if [ ! -f "/bin/auto-kali" ]; then
+	echo "检测到您为第一次使用正在配置..."
+	if [ ! -f "./master.py" ]; then
+		echo -e "检测到当前目录不是此软件的路径\n请cd到START文件所在的文件夹!"
+		exit
+	fi
+	apt-get install curl -y
+	$path= $('pwd')
+	echo "$path" > /usr/local/Auto-kali-path.conf
+	echo "lj=$path" > /bin/auto-kali
+	chmod 777 /bin/auto-kali
+	curl https://raw.githubusercontent.com/nios34/Auto-Kali/CK/mb.sh >> /bin/auto-kali
+	echo "Ok!请重新启动"
+	exit
+fi
 
 #启动命令图形界面
 if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m                  #             ""#      "   \n   ##   m   m  mm#mm   mmm          #   m   mmm     #    mmm   \n  #  #  #   #    #    #" "#         # m"   "   #    #      #   \n  #mm#  #   #    #    #   #   """   #"#    m"""#    #      #   \n #    # "mm"#    "mm  "#m#"         #  "m  "mm"#    "mm  mm#mm\n\n                       是否打开Auto-kali?' 15 68) then
