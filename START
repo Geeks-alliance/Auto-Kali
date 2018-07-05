@@ -17,7 +17,7 @@ if [ ! -f "/bin/auto-kali" ]; then
 		exit
 	fi
 	apt-get install curl -y
-	$path= $('pwd')
+	path= $('pwd')
 	echo "$path" > /usr/local/Auto-kali-path.conf
 	echo "lj=$path" > /bin/auto-kali
 	chmod 777 /bin/auto-kali
