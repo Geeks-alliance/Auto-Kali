@@ -8,7 +8,7 @@ from termcolor import *
 def restart():
     f = open("/usr/local/Auto-kali-path.conf")
     p = f.read()
-    os.system("python3 "+ p + "/master.py" )
+    os.system("python3 "+p+"/master.py")
 def install():
     print (colored('输入help以查询支持安装的软件',"yellow"))
     AZXX = input(colored('请写出您要安装的程序：',"yellow"))
