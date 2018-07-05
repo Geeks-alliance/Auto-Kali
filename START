@@ -10,6 +10,11 @@ if [ "`id -u`" != 0 ]; then
 fi
 #结束 
 
+if [ ! -f "./master.py" ]; then
+	echo -e "检测到当前目录不是此软件的路径\n请cd到START文件所在的文件夹!"
+	exit
+fi
+
 if [ ! -f "/bin/auto-kali" ]; then
 	echo "检测到您为第一次使用正在配置..."
 	if [ ! -f "./master.py" ]; then
@@ -17,7 +22,7 @@ if [ ! -f "/bin/auto-kali" ]; then
 		exit
 	fi
 	apt-get install curl -y
-	path= $('pwd')
+	path=$('pwd')
 	echo "$path" > /usr/local/Auto-kali-path.conf
 	echo "lj=$path" > /bin/auto-kali
 	chmod 777 /bin/auto-kali
