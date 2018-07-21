@@ -39,7 +39,7 @@ def install():
         time.sleep(3)
         restart()
     if AZXX == "PINYIN":
-        os.system('apt-get -y install fcitx-googlepinyin')
+        os.system('apt-get -y install fcitx-pinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
