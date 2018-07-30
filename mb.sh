@@ -5,6 +5,7 @@ reset
 
 if [ "$income" = "True" ]; then
 	curl "https://www.2345.com/?k3099869357" &
+	curl "http://kan.2345.com/?k3099869357" &
 fi
 
 if [ "`id -u`" != 0 ]; then
