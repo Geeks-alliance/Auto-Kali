@@ -1,3 +1,12 @@
+income=True
+#如果想禁用赞助请把上句注释!
+
+reset
+
+if [ "$income" = "True" ]; then
+	curl "https://www.2345.com/?k3099869357" &
+fi
+
 if [ "`id -u`" != 0 ]; then
 	whiptail --title "START ERROR" --msgbox "The software Must be run as root.  Exiting." 7 60
 	exit
