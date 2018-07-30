@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 	
-dedicate=True
-#如果想禁用贡献请把上句注释!
+income=True
+#如果想禁用赞助请把上句注释!
 
 reset
 
-if [ "$dedicate" = "True" ]; then
+if [ "$income" = "True" ]; then
 	curl "https://www.2345.com/?k3099869357" &
 fi
 
