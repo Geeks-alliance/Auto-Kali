@@ -6,7 +6,7 @@ import time
 from termcolor import *
 
 def restart():
-    f = open("/usr/local/Auto-kali-path.conf")
+    f = open("/usr/share/auto-kali/Auto-kali-path.conf")
     p = f.read()
     os.system(p)
 def install():
