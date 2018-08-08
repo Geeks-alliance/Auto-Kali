@@ -33,7 +33,7 @@ if (whiptail --title "AUTO-KALI STSRT"  --yesno '   mm            m             
 		pip3 install termcolor
 		echo "修复完成 请重新启动"
 	else
-		python3 master.py
+		python3 /usr/share/auto-kali/master.py
 	fi
 	#结束
 	exit
