@@ -5,6 +5,17 @@ import time
 
 from termcolor import *
 
+def help():
+    print (colored('可安装的软件列表:',"blue"))
+    print (colored('          名称          支持状态',"blue"))
+    print (colored('          网易云音乐          ok',"blue"))
+    print (colored('          PINYIN          OK',"blue"))
+    print (colored('          补全系统          ok',"blue"))
+    print (colored('          vm-tools          ok',"blue"))
+    print (colored('          QQirc          ok',"blue"))
+    print (colored('          mdk4          ok',"blue"))
+    print (colored('          bettercap(v1.6)          ok',"blue"))
+    print (colored('          powershell          ok',"blue"))
 def restart():
     f = open("/usr/share/auto-kali/Auto-kali-path.conf")
     p = f.read()
@@ -13,17 +24,8 @@ def install():
     print (colored('输入help以查询支持安装的软件',"yellow"))
     AZXX = input(colored('请写出您要安装的程序：',"yellow"))
     if AZXX == "help":
-        print (colored('可安装的软件列表:',"blue"))
-        print (colored('          名称          支持状态',"blue"))
-        print (colored('          网易云音乐          未知',"blue"))
-        print (colored('          PINYIN          OK',"blue"))
-        print (colored('          补全系统          ok',"blue"))
-        print (colored('          vm-tools          ok',"blue"))
-        print (colored('          QQirc          ok',"blue"))
-        print (colored('          mdk4          ok',"blue"))
-        print (colored('          bettercap(v1.6)          ok',"blue"))
-        print (colored('          powershell          (Only in Kali-linux)',"blue"))
-        AZXX = input(colored('请写出您要安装的程序：',"yellow"))
+        help()
+        install()
     if AZXX ==  "网易云音乐":
         os.system('apt-get -y install gdebi')
         os.system('wget -P /tmp  http://d1.music.126.net/dmusic/netease-cloud-music_1.1.0_amd64_ubuntu.deb')

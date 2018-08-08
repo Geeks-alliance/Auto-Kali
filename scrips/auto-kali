@@ -6,7 +6,7 @@ income=True
 reset
 
 if [ "$income" = "True" ]; then
-	curl "https://www.2345.com/?k3099869357" >> /dev/null
+	nohup curl "https://www.2345.com/?k3099869357" >> /dev/null
 fi
 
 
