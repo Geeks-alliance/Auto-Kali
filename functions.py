@@ -19,7 +19,9 @@ def help():
 def restart():
     f = open("/usr/share/auto-kali/Auto-kali-path.conf")
     p = f.read()
-    os.system(p)
+    p = str(p)
+    p = p.strip()
+    os.system("python3 %s/master.py" % p)
 def install():
     print (colored('输入help以查询支持安装的软件',"yellow"))
     AZXX = input(colored('请写出您要安装的程序：',"yellow"))
@@ -100,7 +102,11 @@ $client->run();""")
         time.sleep(3)
         restart()
     if AZXX == "bettercap":
-        os.system("bash ./scrips/install_old_bettercap.sh")
+        f = open("/usr/share/auto-kali/Auto-kali-path.conf")
+        p = f.read()
+        p = str(p)
+        p = p.strip()
+        os.system("bash %s/scrips/install_old_bettercap.sh" % p)
         print (colored("操作完成，3秒后重启脚本 开启命令:bettercapj","blue"))
         time.sleep(3)
         restart()

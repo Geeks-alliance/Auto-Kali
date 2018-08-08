@@ -41,9 +41,6 @@ def main():
         download()
     if XX == "PATH":
         PATH()
-    if XX == "iso":
-        os.system("bash ./scrips/boot-disk.sh")
-        main()
     if XX == "Settings":
         Settings.main()
 
