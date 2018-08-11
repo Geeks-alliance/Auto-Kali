@@ -18,7 +18,7 @@ def main():
         p = f.read()
         p = str(p)
         p = p.strip()
-        os.system("cd %s && git pull" % p)
+        os.system("cd %s && git stash && git pull" % p)
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         os.system("auto-kali")
