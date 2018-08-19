@@ -206,19 +206,3 @@ def  download():
     print (colored("操作完成，3秒后重启脚本","blue"))
     time.sleep(3)
     restart()
-def PATH():
-    print (colored('输入help以查询支持的一键配置环境的语言',"yellow"))
-    YY = input(colored("输入要安装的语言环境:","yellow"))
-    if YY == "help":
-        print (colored('可使用的语言列表:',"blue"))
-        print (colored('          名称          支持状态',"blue"))
-        print (colored('          GO          ok',"blue"))
-        YY = input(colored("输入要安装的语言环境:","yellow"))
-    if YY == "GO":
-        os.system("wget -P /root https://studygolang.com/dl/golang/go1.10.linux-amd64.tar.gz")
-        os.system("tar -xf /root/go1.10.linux-amd64.tar.gz -C /root/")
-        os.system('echo "export PATH=$PATH:/root/go/bin" >> /root/.bashrc')
-        print (colored("操作完成，3秒后重启脚本","blue"))
-        print (colored("用户root的GO语言环境部署完成","blue"))
-        time.sleep(3)
-        restart()

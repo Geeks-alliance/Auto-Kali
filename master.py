@@ -16,8 +16,6 @@ def m_help():
     print (colored("          deb 修改安装源","blue"))
     print (colored("          gpg 修复apt-get时的数字签名错误","blue"))
     print (colored("          download 多线程下载","blue"))
-    print (colored("          PATH 一键部署语言环境","blue"))
-    print (colored("          iso Make-windows-boot-disk","blue"))
     print (colored("          Settings 设置","blue"))
     main()
 def main(): 
@@ -34,8 +32,6 @@ def main():
         gpg()
     if XX == "download":
         download()
-    if XX == "PATH":
-        PATH()
     if XX == "Settings":
         Settings.main()
 
