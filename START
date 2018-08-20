@@ -35,7 +35,7 @@ if [ ! -f "/bin/auto-kali" ]; then
 	echo "import termcolor" > /usr/share/auto-kali/test.py
 	echo "lj=$path" > /bin/auto-kali
 	chmod 777 /bin/auto-kali
-	curl https://raw.githubusercontent.com/nios34/Auto-Kali/CK/mb.sh >> /bin/auto-kali
+	curl https://raw.githubusercontent.com/auto-kali/Auto-Kali/CK/mb.sh >> /bin/auto-kali
 	echo "Ok!请重新启动"
 	exit
 fi

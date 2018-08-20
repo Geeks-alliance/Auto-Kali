@@ -60,6 +60,5 @@ if __name__ == '__main__':
   #  #  #   #    #    #" "#         # m"   "   #    #      #   
   #mm#  #   #    #    #   #   """   #"#    m"""#    #      #   
  #    # "mm"#    "mm  "#m#"         #  "m  "mm"#    "mm  mm#mm ''',"green"))
-    print (colored('\n##################################################\n本作品遵循GNU协议条款\n制作者：极客之眼团队_{"text":"json"}\n修改者:极客之眼团队_无忧Parker\n极客之眼团队群号：659155551\n本工具只适用与kali linux中\n如有错误请联系QQ：1945649519\n可以输入help查看帮助\ngithub仓库:https://github.com/nios34/Auto-Kali\n###########最后祝您使用愉快#######################',"green"))
-    print (colored('Ps.本工具支持序号和中文还有拼音命令',"red"))
+    print (colored('\n##################################################\n本作品遵循GNU协议条款\n制作者：极客之眼团队_{"text":"json"}\n修改者:极客之眼团队_无忧Parker\n极客之眼团队群号：659155551\n本工具只适用与kali linux中\n如有错误请联系QQ：1945649519\n可以输入help查看帮助\ngithub仓库:https://github.com/auto-kali/Auto-Kali\n###########最后祝您使用愉快#######################',"green"))
     main()
