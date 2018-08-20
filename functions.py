@@ -206,3 +206,13 @@ def  download():
     print (colored("操作完成，3秒后重启脚本","blue"))
     time.sleep(3)
     restart()
+def boot():
+    os.system("echo 'deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
+    os.system("echo 'deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
+    os.system("apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60D8DA0B")
+    os.system("apt-get update")
+    os.system("apt-get install -y boot-repair")
+    os.system("boot-repair &")
+    print (colored("操作完成，3秒后重启脚本","blue"))
+    time.sleep(3)
+    restart()

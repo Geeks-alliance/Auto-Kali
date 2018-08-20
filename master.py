@@ -14,27 +14,40 @@ def m_help():
     print (colored("          install 安装程序","blue"))
     print (colored("          exit 退出","blue"))
     print (colored("          deb 修改安装源","blue"))
-    print (colored("          gpg 修复apt-get时的数字签名错误","blue"))
+    print (colored("          bug 错误修复","blue"))
     print (colored("          download 多线程下载","blue"))
     print (colored("          Settings 设置","blue"))
     main()
+def b_help():
+    print (colored("          gpg 修复apt-get时的数字签名错误","blue"))
+    print (colored("          boot 引导修复(必须运行在Xsession上)","blue"))
+    bug()
+def bug():
+    XXX = input("请写出您要修复的错误:")
+    if XXX == "gpg":
+        gpg()
+    elif XXX == "help":
+        b_help()
+    elif XXX == "boot":
+        boot()
+    else:
+        bug()
 def main(): 
     XX= input(colored('请写出您要执行的命令:',"yellow"))
     if XX == "help":
         m_help()
-    if XX == "exit":
+    elif XX == "exit":
         exit()
-    if XX == "deb":
+    elif XX == "deb":
         deb()
-    if XX == "install":
+    elif XX == "install":
         install()
-    if XX == "gpg":
-        gpg()
-    if XX == "download":
+    elif XX == "download":
         download()
-    if XX == "Settings":
+    elif XX == "Settings":
         Settings.main()
-
+    else:
+        main()
 if __name__ == '__main__':
     os.system('reset')
     print (colored('''   mm            m                  #             ""#      "   

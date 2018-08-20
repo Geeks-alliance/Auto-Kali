@@ -8,10 +8,8 @@ from termcolor import *
 def main():
     print (colored(
 """
-┌────────┬────────────────┐
 │ Update │ 更新Auto-kali  │
-└────────┴────────────────┘
-"""))
+""","bule"))
     XX = input(colored("选项:","yellow"))
     if XX == "Update":
         f = open("/usr/share/auto-kali/Auto-kali-path.conf")
@@ -23,6 +21,10 @@ def main():
         time.sleep(3)
         os.system("auto-kali")
         exit
+    else:
+        main()
+        pass
+    pass
 
 if __name__ == '__main__':
     main()
