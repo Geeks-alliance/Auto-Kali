@@ -38,6 +38,8 @@ def main():
         m_help()
     elif XX == "exit":
         exit()
+    elif XX == "bug":
+        bug()
     elif XX == "deb":
         deb()
     elif XX == "install":
