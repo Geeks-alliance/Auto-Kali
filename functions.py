@@ -6,16 +6,19 @@ import time
 from termcolor import *
 
 def help():
-    print (colored('可安装的软件列表:',"blue"))
-    print (colored('          名称          支持状态',"blue"))
-    print (colored('          网易云音乐          ok',"blue"))
-    print (colored('          PINYIN          OK',"blue"))
-    print (colored('          补全系统          ok',"blue"))
-    print (colored('          vm-tools          ok',"blue"))
-    print (colored('          QQirc          ok',"blue"))
-    print (colored('          mdk4          ok',"blue"))
-    print (colored('          bettercap(v1.6)          ok',"blue"))
-    print (colored('          powershell          ok',"blue"))
+    print (colored('可安装的软件列表:                ',"blue"))           
+    print (colored("┌───────────────────────────────────┐","blue"))
+    print (colored('│      软件名称        │   支持状态 │',"blue"))
+    print (colored("├───────────────────────────────────┤","blue"))
+    print (colored('│   1.网易云音乐       │     √      │',"blue"))
+    print (colored('│   2.PinYin or 输入法 │     √      │',"blue"))
+    print (colored('│   3.补全系统         │     √      │',"blue"))
+    print (colored('│   4.vm-tools         │     √      │',"blue"))
+    print (colored('│   5.QQirc            │     √      │',"blue"))
+    print (colored('│   6.mdk4             │     √      │',"blue"))
+    print (colored('│   7.bettercap(v1.6)  │     √      │',"blue"))
+    print (colored('│   8.powershell       │     √      │',"blue"))
+    print (colored("└───────────────────────────────────┘","blue"))
 def restart():
     f = open("/usr/share/auto-kali/Auto-kali-path.conf")
     p = f.read()
@@ -23,12 +26,12 @@ def restart():
     p = p.strip()
     os.system("python3 %s/master.py" % p)
 def install():
-    print (colored('输入help以查询支持安装的软件',"yellow"))
-    AZXX = input(colored('请写出您要安装的程序：',"yellow"))
-    if AZXX == "help":
+    print (colored('输入help以查询支持安装的软件',"green"))
+    AZXX = input(colored('请写出您要安装的程序  >>> ',"yellow"))
+    if AZXX == "help" :
         help()
         install()
-    if AZXX ==  "网易云音乐":
+    if AZXX ==  "网易云音乐" or AZXX == "1":
         os.system('apt-get -y install gdebi')
         os.system('wget -P /tmp  http://d1.music.126.net/dmusic/netease-cloud-music_1.1.0_amd64_ubuntu.deb')
         os.system('gdebi /tmp/netease-cloud-music_1.1.0_amd64_ubuntu.deb')
@@ -36,32 +39,26 @@ def install():
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if AZXX == "输入法":
-        os.system('apt-get -y install fcitx-googlepinyin')
-        os.system('reset')
-        print (colored("操作完成，3秒后重启脚本","blue"))
-        time.sleep(3)
-        restart()
-    if AZXX == "PINYIN":
+    if AZXX == "PinYin" or AZXX == "2" or AZXX == "输入法":
         os.system('apt-get -y install fcitx-pinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if AZXX == "补全系统":
+    if AZXX == "补全系统"or AZXX == "3":
         os.system('apt-get -y install kali-linux-all')
         print (colored("操作完成，3秒后重启脚本","blue"))
         os.system('reset')
         time.sleep(3)
         restart()
-    if AZXX == "vm-tools":
+    if AZXX == "vm-tools" or AZXX == "4":
         os.system('apt-get update')
         os.system('apt-get -y install open-vm-tools-desktop fuse')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if AZXX == "QQirc":
+    if AZXX == "QQirc" or AZXX == "5":
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
         os.system("apt-get install perl  -y")
@@ -88,7 +85,7 @@ $client->run();""")
         print (colored("配置完成!","red"))
         os.system("echo 'perl /home/qq.pl' > ~/QQirc.sh")
         os.system("perl /home/qq.pl")
-    if  AZXX == "mdk4":
+    if  AZXX == "mdk4" or AZXX == "6":
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
         os.system("apt-get -y install g++ git  libnl-3-dev libnl-genl-3-dev pkg-config libpcap-dev build-essential")
@@ -101,7 +98,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if AZXX == "bettercap":
+    if AZXX == "bettercap" or AZXX == "7":
         f = open("/usr/share/auto-kali/Auto-kali-path.conf")
         p = f.read()
         p = str(p)
@@ -110,7 +107,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本 开启命令:bettercapj","blue"))
         time.sleep(3)
         restart()
-    if AZXX == "powershell":
+    if AZXX == "powershell" or AZXX == "8":
         DXCXX = input(colored("多线程下载(Y,N):"))
         if DXCXX == "Y":
             os.system('axel -o /tmp -n 25 "https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell_6.0.2-1.debian.9_amd64.deb"')
@@ -137,16 +134,19 @@ exec xterm -e pwsh &""")
             time.sleep(3)
             restart()
 def deb():
-    print (colored('输入help以查询支持的软件源',"yellow"))
-    debX = input(colored('请写出您要变为的软件源：',"yellow"))
+    print (colored('输入help以查询支持的软件源',"green"))
+    debX = input(colored('请写入您要变为的软件源“序号or中文”  >>> ',"yellow"))
     if debX == "help":
-        print (colored('可使用的软件列表:',"blue"))
-        print (colored('          名称          支持状态',"blue"))
-        print (colored('          中科大          ok',"blue"))
-        print (colored('          官方源          OK',"blue"))
-        print (colored('          手动(高级)          OK',"blue"))
-        debX = input(colored('请写出您要变为的软件源：',"yellow"))
-    if debX == "中科大":
+        print (colored('可安装的软件源列表:                 ',"blue"))           
+        print (colored("┌───────────────────────────────────┐","blue"))
+        print (colored('│      软件源名称        │ 支持状态 │',"blue"))
+        print (colored("├───────────────────────────────────┤","blue"))
+        print (colored('│       1.中科大         │     √    │',"blue"))
+        print (colored('│       2.官方源         │     √    │',"blue"))
+        print (colored('│       3.手动(高级)     │     √    │',"blue"))
+        print (colored("└───────────────────────────────────┘","blue"))
+        debX = input(colored('请写入您要变为的软件源“序号or中文”  >>> ',"yellow"))
+    if debX == "中科大" or debX == "1":
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib\ndeb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
         os.system('apt-get update --fix-missing')
@@ -154,7 +154,7 @@ def deb():
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if debX == "官方源":
+    if debX == "官方源" or debX == "2":
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://http.kali.org/kali kali-rolling main non-free contrib\ndeb-src http://http.kali.org/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
         os.system('apt-get update --fix-missing')
@@ -162,18 +162,18 @@ def deb():
         print (colored("操作完成，3秒后重启脚本","blue"))
         time.sleep(3)
         restart()
-    if debX == "手动":
+    if debX == "手动" or debX == "3":
         os.system("reset")
         print (colored(r'本模块作者:{"text":"josn"}',"red"))
-        DAA = input(colored("help查看帮助,请选择模式:","yellow"))
+        DAA = input(colored("help查看帮助,请选择模式  >>> ","yellow"))
         if DAA == "help":
             print (colored('                模式名称     介绍',"red"))
             print (colored('                w     覆盖之前的数据(危险)',"red"))
             print (colored('                a     追加写入(推荐)',"red"))
-            DAA = input(colored("请选择模式:","yellow"))
+            DAA = input(colored("请选择模式  >>> ","yellow"))
         if DAA == "w":
             DA = open("/etc/apt/sources.list","w") 
-            XR = input(colored(r"写入\n即可换行,写入源地址:","yellow"))
+            XR = input(colored(r"写入\n即可换行,写入源地址  >>> ","yellow"))
             DA.write(XR)
             DA.close
             print (colored("操作完成，3秒后重启脚本","blue"))
@@ -181,7 +181,7 @@ def deb():
             restart()
         if DAA == "a":
             DA = open("/etc/apt/sources.list","a")
-            XR = input(colored(r"写入\n即可换行,写入源地址:","yellow"))
+            XR = input(colored(r"写入\n即可换行,写入源地址  >>> ","yellow"))
             DA.write(XR)
             DA.close()
             print (colored("操作完成，3秒后重启脚本","blue"))
@@ -195,8 +195,8 @@ def gpg():
     time.sleep(3)
     restart()
 def  download():
-    XC = input(colored("输入要使用的线程数:","yellow"))
-    LJ = input(colored("输入要下载的文件链接:","yellow"))
+    XC = input(colored("输入要使用的线程数  >>> ","yellow"))
+    LJ = input(colored("输入要下载的文件链接  >>> ","yellow"))
     print (colored("初始化中Loding...","blue"))
     os.system("apt-get -y install axel")
     print (colored("初始化完成","blue"))
