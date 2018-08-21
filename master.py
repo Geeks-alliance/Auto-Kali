@@ -32,6 +32,8 @@ def bug():
         gpg()
     elif XXX == "boot":
         boot()
+    elif XXX == "help":
+        b_help()
     else:
         bug()
 def main(): 
@@ -41,7 +43,6 @@ def main():
     elif XX == "exit":
         exit()
     elif XX == "bug":
-        b_help()
         bug()
     elif XX == "deb":
         deb()
