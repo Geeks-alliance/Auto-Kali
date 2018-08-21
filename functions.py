@@ -212,7 +212,7 @@ def boot():
     os.system("apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60D8DA0B")
     os.system("apt-get update")
     os.system("apt-get install -y boot-repair")
-    os.system("boot-repair &")
+    os.system("nohup boot-repair&")
     print (colored("操作完成，3秒后重启脚本","blue"))
     time.sleep(3)
     restart()
