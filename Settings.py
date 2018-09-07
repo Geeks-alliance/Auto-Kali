@@ -1,7 +1,7 @@
 # -*- coding=UTF8 -*-
 
 import time
-
+import os
 from termcolor import *
 
 
@@ -9,7 +9,7 @@ def main():
     print (colored(
 """
 │ Update │ 更新Auto-kali  │
-""","bule"))
+""","yellow"))
     XX = input(colored("选项:","yellow"))
     if XX == "Update":
         f = open("/usr/share/auto-kali/Auto-kali-path.conf")
@@ -17,7 +17,7 @@ def main():
         p = str(p)
         p = p.strip()
         os.system("cd %s && git stash && git pull" % p)
-        print (colored("操作完成，3秒后重启脚本","blue"))
+        print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         os.system("auto-kali")
         exit
