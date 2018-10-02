@@ -10,50 +10,55 @@ import Settings
 from functions import *
 from termcolor import *
 
-def m_help():
+zwf=0
+
+def help():
     print (colored("┌───────────────────────────────────┐","blue"))
     print (colored("│        install 安装程序           │","blue"))
     print (colored("│        deb 修改安装源             │","blue"))
     print (colored("│        bug 错误修复               │","blue"))
     print (colored("│        download 多线程下载        │","blue"))
-    print (colored("│        Settings 设置              │","blue"))
+    print (colored("│        settings 设置              │","blue"))
     print (colored("│        exit 退出                  │","blue"))
     print (colored("└───────────────────────────────────┘","blue"))
-    main()
-def b_help():
-    print (colored("┌──────────────────────────────────────┐","blue"))
-    print (colored("│  gpg 修复apt-get时的数字签名错误     │","blue"))
-    print (colored("│  boot 引导修复(必须运行在Xsession上) │","blue"))
-    print (colored("└──────────────────────────────────────┘","blue"))
-    bug()
+    pass
+
 def bug():
-    XXX = input(colored("请写出您要修复的错误 >>> ",'yellow'))
-    if XXX == "gpg":
-        gpg()
-    elif XXX == "boot":
-        boot()
-    elif XXX == "help":
-        b_help()
-    else:
-        bug()
+    while(zwf==zwf):
+        XXX = input(colored("请写出您要修复的错误 >>> ",'yellow'))
+        if XXX == "gpg":
+            bug_Manager.gpg(zwf)
+        elif XXX == "boot":
+            bug_Manager.boot(zwf)
+        elif XXX == "help":
+            bug_Manager.help(zwf)
+        elif XXX == "exit":
+            exit()
+            pass
+        pass
+    pass
+
 def main(): 
-    XX= input(colored('请写出您要执行的命令 >>> ',"yellow"))
-    if XX == "help":
-        m_help()
-    elif XX == "exit":
-        exit()
-    elif XX == "bug":
-        bug()
-    elif XX == "deb":
-        deb()
-    elif XX == "install":
-        install()
-    elif XX == "download":
-        download()
-    elif XX == "Settings":
-        Settings.main()
-    else:
-        main()
+    while(zwf==zwf):
+        XX= input(colored('请写出您要执行的命令 >>> ',"yellow"))
+        if XX == "help":
+            help()
+        elif XX == "exit":
+            exit()
+        elif XX == "bug":
+            bug()
+        elif XX == "deb":
+            deb()
+        elif XX == "install":
+            install()
+        elif XX == "download":
+            download()
+        elif XX == "settings":
+            Settings.main()
+            pass
+        pass
+    pass
+
 if __name__ == '__main__':
     os.system('reset')
     print (colored('''   mm            m                  #             ""#      "   

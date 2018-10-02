@@ -17,4 +17,4 @@ echo "Test start at 3s ago"
 
 sleep 3
 
-bettercapj
+bettercap1.6

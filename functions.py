@@ -5,33 +5,48 @@ import time
 
 from termcolor import *
 
-def help():
-    print (colored('可安装的软件列表:                ',"yellow"))
-    print (colored("┌───────────────────────────────────┐","yellow"))
-    print (colored('│      软件名称        │   支持状态 │',"yellow"))
-    print (colored("├───────────────────────────────────┤","yellow"))
-    print (colored('│   1.网易云音乐       │     √      │',"yellow"))
-    print (colored('│   2.PinYin or 输入法 │     √      │',"yellow"))
-    print (colored('│   3.补全系统         │     √      │',"yellow"))
-    print (colored('│   4.vm-tools         │     √      │',"yellow"))
-    print (colored('│   5.QQirc            │     √      │',"yellow"))
-    print (colored('│   6.mdk4             │     √      │',"yellow"))
-    print (colored('│   7.bettercap(v1.6)  │     √      │',"yellow"))
-    print (colored('│   8.powershell       │     √      │',"yellow"))
-    print (colored("└───────────────────────────────────┘","yellow"))
+zwf=0
+
 def restart():
     f = open("/usr/share/auto-kali/Auto-kali-path.conf")
     p = f.read()
     p = str(p)
     p = p.strip()
     os.system("python3 %s/master.py" % p)
-def install():
-    print (colored('输入help以查询支持安装的软件',"green"))
-    AZXX = input(colored('请写出您要安装的程序  >>> ',"yellow"))
-    if AZXX == "help" :
-        help()
-        install()
-    if AZXX ==  "网易云音乐" or AZXX == "1":
+    pass
+
+def  download():
+    XC = input(colored("输入要使用的线程数  >>> ","yellow"))
+    LJ = input(colored("输入要下载的文件链接  >>> ","yellow"))
+    print (colored("初始化中Loding...","yellow"))
+    os.system("apt-get -y install axel")
+    print (colored("初始化完成","yellow"))
+    os.system("axel -o /root/ -n"+ XC +' '+'\"'+LJ+'\"')
+    os.system('reset')
+    print (colored("文件存放路径：/root/","yellow"))
+    print (colored("操作完成，3秒后重启脚本","yellow"))
+    time.sleep(3)
+    restart()
+    pass
+
+class install_Manager():
+    def help(self):
+        print (colored('可安装的软件列表:                ',"yellow"))
+        print (colored("┌───────────────────────────────────┐","yellow"))
+        print (colored('│      软件名称        │   支持状态 │',"yellow"))
+        print (colored("├───────────────────────────────────┤","yellow"))
+        print (colored('│   1.网易云音乐       │     √      │',"yellow"))
+        print (colored('│   2.PinYin or 输入法 │     √      │',"yellow"))
+        print (colored('│   3.补全系统         │     √      │',"yellow"))
+        print (colored('│   4.vm-tools         │     √      │',"yellow"))
+        print (colored('│   5.QQirc            │     √      │',"yellow"))
+        print (colored('│   6.mdk4             │     √      │',"yellow"))
+        print (colored('│   7.bettercap(v1.6)  │     √      │',"yellow"))
+        print (colored('│   8.powershell       │     √      │',"yellow"))
+        print (colored("└───────────────────────────────────┘","yellow"))
+    def __init__(self):
+        pass
+    def wyymusic(self):
         os.system('apt-get -y install gdebi')
         os.system('wget -P /tmp  http://d1.music.126.net/dmusic/netease-cloud-music_1.1.0_amd64_ubuntu.deb')
         os.system('gdebi /tmp/netease-cloud-music_1.1.0_amd64_ubuntu.deb')
@@ -39,26 +54,26 @@ def install():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if AZXX == "PinYin" or AZXX == "2" or AZXX == "输入法":
+    def pinyin(self):
         os.system('apt-get -y install fcitx-pinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if AZXX == "补全系统"or AZXX == "3":
+    def kalilinuxful(self):
         os.system('apt-get -y install kali-linux-all')
         print (colored("操作完成，3秒后重启脚本","yellow"))
         os.system('reset')
         time.sleep(3)
         restart()
-    if AZXX == "vm-tools" or AZXX == "4":
+    def vmtools(self):
         os.system('apt-get update')
         os.system('apt-get -y install open-vm-tools-desktop fuse')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if AZXX == "QQirc" or AZXX == "5":
+    def qqirc(self):
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
         os.system("apt-get install perl  -y")
@@ -85,7 +100,7 @@ $client->run();""")
         print (colored("配置完成!","red"))
         os.system("echo 'perl /home/qq.pl' > ~/QQirc.sh")
         os.system("perl /home/qq.pl")
-    if  AZXX == "mdk4" or AZXX == "6":
+    def mdk4(self):
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
         os.system("apt-get -y install g++ git  libnl-3-dev libnl-genl-3-dev pkg-config libpcap-dev build-essential")
@@ -98,7 +113,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if AZXX == "bettercap" or AZXX == "7":
+    def bettercap(self):
         f = open("/usr/share/auto-kali/Auto-kali-path.conf")
         p = f.read()
         p = str(p)
@@ -107,7 +122,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本 开启命令:bettercapj","yellow"))
         time.sleep(3)
         restart()
-    if AZXX == "powershell" or AZXX == "8":
+    def powershell(self):
         DXCXX = input(colored("多线程下载(Y,N):"))
         if DXCXX == "Y":
             os.system('axel -o /tmp -n 25 "https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell_6.0.2-1.debian.9_amd64.deb"')
@@ -133,10 +148,14 @@ exec xterm -e pwsh &""")
             print (colored("操作完成，3秒后重启脚本 开启命令:powershell","yellow"))
             time.sleep(3)
             restart()
-def deb():
-    print (colored('输入help以查询支持的软件源',"green"))
-    debX = input(colored('请写入您要变为的软件源“序号or中文”  >>> ',"yellow"))
-    if debX == "help":
+            pass
+        pass
+    pass
+
+class deb_Manager():
+    def __init__(self):
+        pass
+    def help(self):
         print (colored('可安装的软件源列表:                 ',"yellow"))
         print (colored("┌───────────────────────────────────┐","yellow"))
         print (colored('│      软件源名称        │ 支持状态 │',"yellow"))
@@ -145,8 +164,7 @@ def deb():
         print (colored('│       2.官方源         │     √    │',"yellow"))
         print (colored('│       3.手动(高级)     │     √    │',"yellow"))
         print (colored("└───────────────────────────────────┘","yellow"))
-        debX = input(colored('请写入您要变为的软件源“序号or中文”  >>> ',"yellow"))
-    if debX == "中科大" or debX == "1":
+    def zkd(self):
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib\ndeb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
         os.system('apt-get update --fix-missing')
@@ -154,7 +172,7 @@ def deb():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if debX == "官方源" or debX == "2":
+    def gfy(self):
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://http.kali.org/kali kali-rolling main non-free contrib\ndeb-src http://http.kali.org/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
         os.system('apt-get update --fix-missing')
@@ -162,7 +180,7 @@ def deb():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
-    if debX == "手动" or debX == "3":
+    def sd(self):
         os.system("reset")
         print (colored(r'本模块作者:{"text":"josn"}',"red"))
         DAA = input(colored("help查看帮助,请选择模式  >>> ","yellow"))
@@ -187,32 +205,81 @@ def deb():
             print (colored("操作完成，3秒后重启脚本","yellow"))
             time.sleep(3)
             restart()
-def gpg():
-    os.system('wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add')
-    os.system('apt-get update')
-    os.system('reset')
-    print (colored("操作完成，3秒后重启脚本","yellow"))
-    time.sleep(3)
-    restart()
-def  download():
-    XC = input(colored("输入要使用的线程数  >>> ","yellow"))
-    LJ = input(colored("输入要下载的文件链接  >>> ","yellow"))
-    print (colored("初始化中Loding...","yellow"))
-    os.system("apt-get -y install axel")
-    print (colored("初始化完成","yellow"))
-    os.system("axel -o /root/ -n"+ XC +' '+'\"'+LJ+'\"')
-    os.system('reset')
-    print (colored("文件存放路径：/root/","yellow"))
-    print (colored("操作完成，3秒后重启脚本","yellow"))
-    time.sleep(3)
-    restart()
-def boot():
-    os.system("echo 'deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
-    os.system("echo 'deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
-    os.system("apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60D8DA0B")
-    os.system("apt-get update")
-    os.system("apt-get install -y boot-repair")
-    os.system("nohup boot-repair&")
-    print (colored("操作完成，3秒后重启脚本","yellow"))
-    time.sleep(3)
-    restart()
+            pass
+        pass
+    pass
+
+class bug_Manager():
+    def __init__(self):
+        pass
+    def gpg(self):
+        os.system('wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add')
+        os.system('apt-get update')
+        os.system('reset')
+        print (colored("操作完成，3秒后重启脚本","yellow"))
+        time.sleep(3)
+        restart()
+    def boot(self):
+        os.system("echo 'deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
+        os.system("echo 'deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
+        os.system("apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60D8DA0B")
+        os.system("apt-get update")
+        os.system("apt-get install -y boot-repair")
+        os.system("nohup boot-repair&")
+        print (colored("操作完成，3秒后重启脚本","yellow"))
+        time.sleep(3)
+        restart()
+    def help(self):
+        print (colored("┌──────────────────────────────────────┐","blue"))
+        print (colored("│  gpg 修复apt-get时的数字签名错误     │","blue"))
+        print (colored("│  boot 引导修复(必须运行在Xsession上) │","blue"))
+        print (colored("└──────────────────────────────────────┘","blue"))
+        pass
+    pass
+
+def deb():
+    print (colored('输入help以查询支持的软件源',"green"))
+    while (zwf==zwf):
+        debX = input(colored('请写入您要变为的软件源“序号or中文”  >>> ',"yellow"))
+        if debX == "help":
+            deb_Manager.help(zwf)
+        elif debX == "中科大" or debX == "1":
+            deb_Manager.zkd(zwf)
+        elif debX == "官方源" or debX == "2":
+            deb_Manager.gfy(zwf)
+        elif debX == "手动" or debX == "3":
+            deb_Manager.sd(zwf)
+        elif debX == "exit":
+            exit()
+            pass
+        pass
+    pass
+
+def install():
+    print (colored('输入help以查询支持安装的软件',"green"))
+    while (zwf==zwf):
+        AZXX = input(colored('请写出您要安装的程序  >>> ',"yellow"))
+        if AZXX == "help":
+            install_Manager.help(zwf)
+        elif AZXX ==  "网易云音乐" or AZXX == "1":
+            install_Manager.wyymusic(zwf)
+        elif AZXX == "PinYin" or AZXX == "2" or AZXX == "输入法":
+            install_Manager.pinyin(zwf)
+        elif AZXX == "补全系统"or AZXX == "3":
+            install_Manager.kalilinuxful(zwf)
+        elif AZXX == "vm-tools" or AZXX == "4":
+            install_Manager.vmtools(zwf)
+        elif AZXX == "QQirc" or AZXX == "5":
+            install_Manager.qqirc(zwf)
+        elif  AZXX == "mdk4" or AZXX == "6":
+            install_Manager.mdk4(zwf)
+        elif AZXX == "bettercap" or AZXX == "7":
+            install_Manager.bettercap(zwf)
+        elif AZXX == "powershell" or AZXX == "8":
+            install_Manager.powershell(zwf)
+        elif AZXX == "exit":
+            exit()
+            pass
+        pass
+    pass
+
