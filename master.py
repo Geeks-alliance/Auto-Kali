@@ -41,10 +41,10 @@ def bug():
 def main(): 
     while(zwf==zwf):
         XX= input(colored('请写出您要执行的命令 >>> ',"yellow"))
-        if XX == "help":
-            help()
-        elif XX == "exit":
+        if XX == "exit":
             exit()
+        elif XX == "help":
+            help()
         elif XX == "bug":
             bug()
         elif XX == "deb":
