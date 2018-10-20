@@ -263,10 +263,13 @@ def deb():
             deb_Manager.help(zwf)
         elif debX == "中科大" or debX == "1":
             deb_Manager.zkd(zwf)
+            exit()
         elif debX == "官方源" or debX == "2":
             deb_Manager.gfy(zwf)
+            exit()
         elif debX == "手动" or debX == "3":
             deb_Manager.sd(zwf)
+            exit()
         elif debX == "exit":
             exit()
             pass
@@ -281,20 +284,28 @@ def install():
             install_Manager.help(zwf)
         elif AZXX ==  "网易云音乐" or AZXX == "1":
             install_Manager.wyymusic(zwf)
+            exit()
         elif AZXX == "PinYin" or AZXX == "2" or AZXX == "输入法":
             install_Manager.pinyin(zwf)
+            exit()
         elif AZXX == "补全系统"or AZXX == "3":
             install_Manager.kalilinuxful(zwf)
+            exit()
         elif AZXX == "vm-tools" or AZXX == "4":
             install_Manager.vmtools(zwf)
+            exit()
         elif AZXX == "QQirc" or AZXX == "5":
             install_Manager.qqirc(zwf)
+            exit()
         elif  AZXX == "mdk4" or AZXX == "6":
             install_Manager.mdk4(zwf)
+            exit()
         elif AZXX == "bettercap" or AZXX == "7":
             install_Manager.bettercap(zwf)
+            exit()
         elif AZXX == "powershell" or AZXX == "8":
             install_Manager.powershell(zwf)
+            exit()
         elif AZXX == "exit":
             exit()
             pass
