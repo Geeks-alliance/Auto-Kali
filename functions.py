@@ -13,6 +13,7 @@ def restart():
     p = str(p)
     p = p.strip()
     os.system("python3 %s/master.py" % p)
+    exit()
     pass
 
 def  download():
@@ -27,6 +28,7 @@ def  download():
     print (colored("操作完成，3秒后重启脚本","yellow"))
     time.sleep(3)
     restart()
+    exit()
     pass
 
 class install_Manager():
@@ -54,18 +56,21 @@ class install_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def pinyin(self):
         os.system('apt-get -y install fcitx-pinyin')
         os.system('reset')
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def kalilinuxful(self):
         os.system('apt-get -y install kali-linux-all')
         print (colored("操作完成，3秒后重启脚本","yellow"))
         os.system('reset')
         time.sleep(3)
         restart()
+        exit()
     def vmtools(self):
         os.system('apt-get update')
         os.system('apt-get -y install open-vm-tools-desktop fuse')
@@ -73,6 +78,7 @@ class install_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def qqirc(self):
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
@@ -100,6 +106,8 @@ $client->run();""")
         print (colored("配置完成!","red"))
         os.system("echo 'perl /home/qq.pl' > ~/QQirc.sh")
         os.system("perl /home/qq.pl")
+        restart()
+        exit()
     def mdk4(self):
         os.system("reset")
         print (colored("第一阶段:安装依赖!","red"))
@@ -113,6 +121,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def bettercap(self):
         f = open("/usr/share/auto-kali/Auto-kali-path.conf")
         p = f.read()
@@ -122,6 +131,7 @@ $client->run();""")
         print (colored("操作完成，3秒后重启脚本 开启命令:bettercapj","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def powershell(self):
         DXCXX = input(colored("多线程下载(Y,N):"))
         if DXCXX == "Y":
@@ -135,6 +145,7 @@ exec xterm -e pwsh &""")
             print (colored("操作完成，3秒后重启脚本 开启命令:powershell","yellow"))
             time.sleep(3)
             restart()
+            exit()
         if DXCXX == "N":
             os.system('wget -P /tmp "https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell_6.0.2-1.debian.9_amd64.deb"')
             os.system("dpkg -i /tmp/powershell_6.0.2-1.debian.9_amd64.deb")
@@ -148,6 +159,7 @@ exec xterm -e pwsh &""")
             print (colored("操作完成，3秒后重启脚本 开启命令:powershell","yellow"))
             time.sleep(3)
             restart()
+            exit()
             pass
         pass
     pass
@@ -172,6 +184,7 @@ class deb_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def gfy(self):
         os.system('rm -rf /etc/apt/sources.list')
         os.system('echo "deb http://http.kali.org/kali kali-rolling main non-free contrib\ndeb-src http://http.kali.org/kali kali-rolling main non-free contrib" >/etc/apt/sources.list')
@@ -180,6 +193,7 @@ class deb_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def sd(self):
         os.system("reset")
         print (colored(r'本模块作者:{"text":"josn"}',"red"))
@@ -197,6 +211,7 @@ class deb_Manager():
             print (colored("操作完成，3秒后重启脚本","yellow"))
             time.sleep(3)
             restart()
+            exit()
         if DAA == "a":
             DA = open("/etc/apt/sources.list","a")
             XR = input(colored(r"写入\n即可换行,写入源地址  >>> ","yellow"))
@@ -205,6 +220,7 @@ class deb_Manager():
             print (colored("操作完成，3秒后重启脚本","yellow"))
             time.sleep(3)
             restart()
+            exit()
             pass
         pass
     pass
@@ -219,6 +235,7 @@ class bug_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def boot(self):
         os.system("echo 'deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
         os.system("echo 'deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu bionic main ' >> /etc/apt/sources.list")
@@ -229,6 +246,7 @@ class bug_Manager():
         print (colored("操作完成，3秒后重启脚本","yellow"))
         time.sleep(3)
         restart()
+        exit()
     def help(self):
         print (colored("┌──────────────────────────────────────┐","blue"))
         print (colored("│  gpg 修复apt-get时的数字签名错误     │","blue"))
