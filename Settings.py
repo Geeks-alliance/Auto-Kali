@@ -8,7 +8,9 @@ from termcolor import *
 def main():
     print (colored(
 """
-│ Update │ 更新Auto-kali  │
+############SETTINGS############
+Update   更新Auto-kali
+################################
 ""","yellow"))
     XX = input(colored("选项:","yellow"))
     if XX == "Update":

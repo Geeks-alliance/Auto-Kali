@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding=UTF8 -*-
-#Push time is "2018.10.24-12:18"
+#Push time is "2018.10.27-18:31"
 
 import os
 import time
@@ -33,6 +33,8 @@ def bug():
             bug_Manager.boot(zwf)
         elif XXX == "help":
             bug_Manager.help(zwf)
+        elif XXX == "gnome":
+            bug_Manager.gnome_show_icon_on_desktp(zwf)
         elif XXX == "exit":
             exit()
             pass

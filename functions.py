@@ -247,10 +247,34 @@ class bug_Manager():
         time.sleep(3)
         restart()
         exit()
+    def gnome_show_icon_on_desktp(self):
+        print("""Warning:This fix script on "GNOME Shell >= 3.28 Nautilus >= 3.30" If you are another version This scripy maybe can't play a role of your PC.""")
+        print("""If you don't know that meaning,You can try. (And your Language Unsupported!)""")
+        #write shell script
+        os.system("touch /tmp/fix.sh")
+        script = open("/tmp/fix.sh",'w')
+        script.write("""
+if (whiptail --title "AUTO-KALI BUG FIX"  --yesno 'Warning:This fix script on "GNOME Shell >= 3.28 Nautilus >= 3.30" If you are another version This scripy maybe cant play a role of your PC.(Your Language Unsupported!)\n\nIf you press Yes button you will logout and Follow the steps to Compulete\n\n1.在终端内输入"gnome-tweaks"\n2.点击"扩展"\n3.找到"Desktop-icons"并开启' 20 70) then
+    apt-get install gnome-shell nautilus gnome-shell-extension-desktop-icons -y
+    echo "Logout in 3s"
+    sleep 3
+    gnome-shell --replace
+    exit
+else
+    echo "Cancel"
+    exit
+fi""")
+        script.close()
+        os.system("bash /tmp/fix.sh")
+        print (colored("操作完成，3秒后重启脚本","yellow"))
+        time.sleep(3)
+        restart()
+        exit()
     def help(self):
         print (colored("┌──────────────────────────────────────┐","blue"))
         print (colored("│  gpg 修复apt-get时的数字签名错误     │","blue"))
         print (colored("│  boot 引导修复(必须运行在Xsession上) │","blue"))
+        print (colored("│  gnome 显示桌面图标                  │","blue"))
         print (colored("└──────────────────────────────────────┘","blue"))
         pass
     pass
