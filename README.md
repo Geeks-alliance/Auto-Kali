@@ -7,7 +7,7 @@
  
 ```
 
-本工具可以自动化配置Kalilinux的常见错误 和安装一下常见的软件例如:w3af googlepinyin等<br>
+本工具可以自动化配置Kalilinux的常见错误 和安装一下常见的软件例如:网易云音乐 googlepinyin等<br>
 
 不得用于商业用途，如要转载，注明 'geekeyes团队'<br>
 > 注意<br>
