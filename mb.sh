@@ -1,5 +1,5 @@
-income=True
-#如果想禁用赞助请把上句注释!
+income=False
+#如果想开启赞助请把上句改成True
 
 reset
 
