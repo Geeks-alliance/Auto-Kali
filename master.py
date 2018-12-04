@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding=UTF8 -*-
-#Push time is "2018.10.27-18:31"
 
 import os
 import time
@@ -69,5 +68,5 @@ if __name__ == '__main__':
   #  #  #   #    #    #" "#         # m"   "   #    #      #   
   #mm#  #   #    #    #   #   """   #"#    m"""#    #      #   
  #    # "mm"#    "mm  "#m#"         #  "m  "mm"#    "mm  mm#mm ''',"green"))
-    print (colored('\n##################################################\n本作品遵循GNU协议条款\n制作者：极客之眼团队_{"text":"json"}_无忧Parker\n极客之眼团队群号：659155551\n本工具只适用与kali linux中\n如有错误请联系QQ：1945649519\n可以输入help查看帮助\ngithub仓库:https://github.com/auto-kali/Auto-Kali\n###########最后祝您使用愉快#######################',"green"))
+    print (colored('\n##################################################\n本作品遵循GNU协议条款\n制作者：极客之眼团队_{"text":"json"}_无忧Parker\n极客之眼团队群号：659155551\n本工具只适用与kali linux中\n如有错误请联系QQ：1945649519\n可以输入help查看帮助\ngithub仓库:https://github.com/Geeks-alliance/Auto-Kali\n###########最后祝您使用愉快#######################',"green"))
     main()
