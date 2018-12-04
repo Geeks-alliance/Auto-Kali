@@ -9,7 +9,6 @@
 
 本工具可以自动化配置Kalilinux的常见错误 和安装一下常见的软件例如:网易云音乐 googlepinyin等<br>
 
-不得用于商业用途，如要转载，注明 'geekeyes团队'<br>
 > 注意<br>
 > > 即使能够自动检查依赖，也无法百分百保证能够开启成功<br>
 > > 如果有报错请自行安装termcolor模块<br>
@@ -18,13 +17,13 @@
 --------------------------
 
 > 懒人安装方法:<br>
-> > curl https://raw.githubusercontent.com/auto-kali/Auto-Kali/master/scrips/install.sh | bash<br>
+> > curl https://raw.githubusercontent.com/Geeks-alliance/Auto-Kali/master/scrips/install.sh | bash<br>
 
 --------------------------
 
 > 手动安装方法:<br>
 > > su<br>
-> > git clone https://github.com/auto-kali/Auto-Kali && cd Auto-kali && sudo ./START<br>
+> > git clone https://github.com/Geeks-alliance/Auto-Kali && cd Auto-kali && sudo ./START<br>
 > > Tips:如果sudo auto-kali无法启动输入./START也能启动(仅限手动安装)
 
 --------------------------
